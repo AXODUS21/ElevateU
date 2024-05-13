@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.text{
+    display: grid;
+}
+svg {
+	font-family: "Tiro Devanagari Sanskrit", sans-serif;
+	width: 100%; height: 120%;
+}
+svg text {
+	animation: stroke 3s forwards;
+	stroke-width: 2;
+	stroke: #365FA0;
+	font-size: 4.5vw;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
+	80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+.text p{
+    text-align: center;
+    font-size: 1vw;
+}
+
+.image{
+    padding: 5px;
+    border: black solid;
+}
+.image img{
+    height: 40vw;
+}
+
+.quotes-container{
+    display: grid;
+    place-content: center;
+    height: 70vh;
+    gap: 5vh;
+}
+.motivation-button{
+      position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: rgb(0 107 179);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 3px solid #ffffff4d;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.motivation-button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.motivation-button:hover .icon {
+  transform: translate(4px);
+}
+
+.motivation-button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.motivation-button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.motivation{
+    font-size: 2vw;
+    text-transform: capitalize;
+    width: 50vw;
+    height: 40vh;
+    text-align: center;
+}
+
+.articles-container{
+    display: grid;
+    text-align: center;
+    gap: 40px;
+}
+.article-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    gap: 80px;
+}
+.article-grid a {
+    text-decoration: none;
+}
+.article img{
+    height: 30vh;
+    margin-bottom: 15px;
+}
+.article{
+    border: solid black;
+    padding: 15px;
+    opacity: 0; /* Set initial opacity to 0 */
+    transform: translateY(20px); /* Move the element down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition */
+}
+.article.animate{
+    opacity: 1; /* Change opacity to 1 */
+    transform: translateY(0); /* Move the element back to its original position */
+}
+.road-map-container{
+    display: grid;
+    place-items: center;
+    margin-top: 10vh;
+}
+.roadmap-grid{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr 0.8fr;
+    gap: 80px;
+}
+.roadmap img{
+    height: 20vw;
+    border: solid black;
+}
+.footer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-text{
+    text-align: center;
+}
+.footer-text h1{
+    font-size: 5vw;
+}
+.footer-text h2{
+    font-size: 2vw;
+}
